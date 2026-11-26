@@ -1,0 +1,17 @@
+{
+  "name": "suuqly-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Suuqly - The Alibaba of Garissa & Northern Kenya",
+  "scripts": {
+    "dev": "concurrently -k -n SERVER,CLIENT -c green,yellow \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "typecheck": "npm --prefix server run typecheck && npm --prefix client run typecheck",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
